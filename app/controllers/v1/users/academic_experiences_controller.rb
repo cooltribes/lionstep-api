@@ -3,6 +3,8 @@ class V1::Users::AcademicExperiencesController < V1::BaseController
   before_action :set_experience, except: [:index, :create]
 
   def index
+    experiences = current_user.academic_experiences
+    render json: experiences
   end
 
   def create

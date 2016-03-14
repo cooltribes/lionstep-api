@@ -2,6 +2,11 @@ class V1::Users::ContactsController < V1::BaseController
   before_action :set_contactable
   before_action :set_contact, except: [:index, :create, :batch]
 
+  def index
+    contacts = @contactable.contacts
+    render json: contacts
+  end
+
   def create
     authorize Contact
     contact = @contactable.contacts.build(contact_params)

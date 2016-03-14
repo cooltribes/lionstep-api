@@ -1,6 +1,11 @@
 class V1::Users::LanguagesController < V1::BaseController
   before_action :set_user
 
+  def index
+    languages = current_user.languages
+    render json: languages
+  end
+
   def create
     authorize_user @user
     service = ::Languages::AddLanguagesToUser.new(@user, languages_params.fetch(:languages))
