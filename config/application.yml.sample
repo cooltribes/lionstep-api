@@ -1,0 +1,12 @@
+defaults: &defaults
+  ui_endpoint: "www.lvh.me:3000"
+  api_endpoint: "www.lvh.me:4000"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

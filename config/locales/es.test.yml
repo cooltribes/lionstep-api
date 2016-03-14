@@ -1,0 +1,94 @@
+es:
+  test:
+    question:
+      extraversion: A menudo te sorprendes imaginando tu futuro personal y/o profesional.
+      intuition: No te cuesta mucho empezar a socializar en un nuevo entorno.
+      feeling: Preferirías que tu hijo/a creciera siendo muy educado/a, antes que muy hábil.
+      perceiving: Mantener tus opciones abiertas es más importante que tener una lista de cosas que hacer en el día.
+      introversion: Tu energía trabajando sube y baja repentinamente, en vez de tener un nivel de energía constante durante toda la jornada.
+      sensing: Eres más practico/a que creativo/a.
+      thinking: En términos generales, te fías más de tu experiencia que de tu imaginación.
+      judging: Se organizado/a es más importante que ser flexible.
+    types:
+      INTJ:
+        name: Estructurado/a
+        description: Estrategas que trabajan de forma individual y firmes defensores de sus valores. Una de las personalidades menos comunes que se dan. Suelen ser personas creativas, ambiciosas y tremendamente curiosas que trabajan duramente para conseguir sus objetivos
+        top: Suelen ser muy trabajadores
+        flop: Pueden ser percibidos como arrogantes.
+      INTP:
+        name: Lógico/a
+        description: Con desarrolladas capacidades analíticas, las personas de este tipo suelen tener facilidad para reconocer patrones y estructuras recurrentes en su entorno. Su pensamiento crítico hace que sean personas que contribuyen a evaluar ideas y a buscar los puntos débiles a un planteamiento.
+        top: Suelen ser objetivos y honestos
+        flop: Pueden ser percibidos como condescendientes.
+      ENTJ:
+        name: Comandante
+        description: Líderes naturales que suelen combinar el carisma y la confianza en sí mismas, las personas de este tipo disfrutan llevando a cabo tareas estratégicas y son capaces de contagiar su entusiasmo a sus colegas de trabajao.
+        top: Suelen ser personas muy energéticas, eficaces y pragmáticas.
+        flop: En ocasiones pueden ser obstinadas e intolerantes.
+      ENTP:
+        name: Retórico/a
+        description: Críticas con su entorno y sus colegas, las personas de este tipo suelen poner en tela de juicio los proyectos e ideas que se les presentan. Muy trabajadoras, las personas del tipo `retórico´buscan el desarrollo sóludio y sostenible a largo plazo.
+        top: Suelen ser personas que trabajan duramente y tienen un muy alto nivel de exigencia consigo mismas.
+        flop: Al buscar la crítica en los planteamientos que se les presentan, pueden ser percibidos como demasiado críticos.
+      INFJ:
+        name: Respetuoso/a
+        description: Idealistas y analíticas, las personas de este tipo buscan alcanzar sus objetivos de forma coordinada con los demás. Suelen ser personas que analizan sus necesidades y las de los demás de forma discreta y buscan maximizar el bien común, en cooperación son su entorno.
+        top: Suelen ser altruistas y ayudan con gusto a los demás.
+        flop: Pueden ser muy perfeccionistas y pueden llegar a ser personas muy reservadas.
+      INFP:
+        name: Mediador/a
+        description: Auténticamente idealistas y con un afán tremendo por buscar los aspectos positivos de cualquier persona o situación, las personas de este tipo tienen una pasión interna que inspira a los demás.
+        top: Suelen ser personas optimistas con afán de mejorarse a sí mismas y a los demás.
+        flop: Pueden ser personas timidas a las que no les gusta enfrentarse a los hechos difíciles
+      ENFJ:
+        name: Protagonista
+        description: Llenas de carisma y entusiasmo, las personas de este tipo están hechas para generar una visión y transmitirla a los demás, motivándolos para conseguir un objetivo común.
+        top: Las personas de este tipo suelen ser tolerantes, carismáticas y justas.
+        flop: Pueden ser demasido idealistas y pueden tener dificultades a la hora de tomar decidiones importantes.
+      ENFP:
+        name: Tenaz
+        description: Un espíritu libre, lleno de idealismo y de valor. Las personas de este tipo suelen ser buenas a la hora de idear un plan y fijar unos objetivos que pueden, a priori, parecer imposibles.
+        top: Suelen ser personas curiosas, que comunican bien y que observan la realidad meticulosamente.
+        flop: Pueden tener dificultades a la hora de concentrarse y de tratar con problemas analíticos.
+      ISTJ:
+        name: Logístico/a
+        description: Personas prácticas, con una tremenda capacidad para llevar su entorno al máximo punto de eficacia.
+        top: Suelen ser personas muy honetas y directas en las que se puede confiar, dado su alto nivel de responsabilidad.
+        flop: Suelen tener dificultades a la hora de trabajar cuando carecen de directrices claras que seguir.
+      ISFJ:
+        name: Defensor/a
+        description: Personas dedicadas a los demás, que suelen preocuparse por el bienestar de todas las personas de su entorno. Suelen ser muy sensibles y tener altos niveles de empatía.
+        top: Suelen ser personas con ganas de ayudar a los demás y muy leales.
+        flop:
+      ESTJ:
+        name: Ejecutivo/a
+        description: Personas con excelentes capacidades de administración, suelen tener mucha facilidad a la hora de llevar a cabo las tareas necesarias para conseguir el objetivo común.
+        top: Suelen ser personas muy tenazes, puntuales y con mucha capacidad de sacrificio.
+        flop: En ocasiones pueden ser percibidos como inflexibles y obstinados.
+      ESFJ:
+        name: Diplomático/a
+        description: Personas muy populares que se preocupan de los demás y consiguen crear una atmósfera de bienestar a su alrededor.
+        top: Suelen ser muy amables y tener gran facilidad para socializar. Se suelen preocupar de generar entornos alegeres y responsables.
+        flop: Pueden reaccionar demasiado ante una crítica y suelen rechazar los cambios en su entorno.
+      ISTP:
+        name: Virtuoso/a
+        description: Personas muy hábiles y con una gran capcidad para aprender, se desenvuelven bien en entrnos prácticos en los que hay que aplicar conocimientos determinados.
+        top: Suelen ser personas espontáneas y racionales.
+        flop: Pueden distraerse facilmente y pueden tener dificultades para comprometerse.
+      ISFP:
+        name: Aventurero/a
+        description: Flexibles y relajadas, estas personas suelen estar dispuestas a explorar las opciones de lo desconocido y tienen además facilidad para eprcibir las necesidades de los demás.
+        top: Suelen sentir pasión por lo que hacen, además deuna gran curiosidad por aprender lo que (aún) no saben.
+        flop: Pueden ser percibidos como tremendamente indpendientes y sufrir altibajos en su autoestima.
+      ESTP:
+        name: Emprendedor/a
+        description: Atrevidas, eficaces y hábiles, las personas de este tipo suelen vivir al máximo su día a día, y contagiar a los demás de su energía y encanto.
+        top: Suelen ser personas muy sociables, optimistas y carismáticas.
+        flop: Pueden ser percibidas como impacientes y desorganizadas.
+      ESFP:
+        name: Animador/a
+        description: Personas enérgicas, entusiastas y divertidas que contagian a su entrno de optimismo. Suelen ser muy buenas personas a la hora de atender a clientes y dar la cara al público en una empresa.
+        top: Suelen ser originales, prácticas y empáticas.
+        flop: Pueden carecer de capacidades para concentrarse y planear a medio y largo plazo.
+
+

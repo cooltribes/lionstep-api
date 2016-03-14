@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: jobsquare_development
+  username:
+  password:
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: jobsquare_test
+  username:
+  password:
+  host: localhost
+  port: 5432
