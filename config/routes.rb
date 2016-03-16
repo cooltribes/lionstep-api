@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :albums, only: actions
     end
 
-    resources :users, concerns: [:albumable] do
+    resources :users, only: actions do
 
       resource :profile, only: [:show, :update], module: 'users'
 
