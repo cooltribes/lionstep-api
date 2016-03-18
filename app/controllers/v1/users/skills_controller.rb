@@ -1,6 +1,11 @@
 class V1::Users::SkillsController < V1::BaseController
   before_filter :set_user
 
+  def index
+    skills = current_user.skills
+    render json: skills
+  end
+
   def create
     authorize_user @user
     service = ::Skills::AddSkillsToUser.new(@user, skills_params[:skills])

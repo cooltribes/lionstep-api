@@ -1,4 +1,4 @@
-class V1::PicturesController < ApplicationController
+class V1::PicturesController < V1::BaseController
 
   def create
     # authorize Picture
