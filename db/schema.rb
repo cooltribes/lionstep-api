@@ -224,10 +224,10 @@ ActiveRecord::Schema.define(version: 20160310171932) do
     t.integer  "thinking",     default: 0
     t.integer  "judging",      default: 0
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.datetime "deleted_at"
-    t.boolean  "complete"
+    t.boolean  "complete",     default: false
     t.string   "step"
   end
 

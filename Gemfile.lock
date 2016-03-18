@@ -123,6 +123,7 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
+    puma (3.1.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     quiet_assets (1.1.0)
@@ -237,6 +238,7 @@ DEPENDENCIES
   paranoia (~> 2.0)
   pg
   pry-byebug
+  puma
   pundit
   quiet_assets
   rack-cors
@@ -254,6 +256,3 @@ DEPENDENCIES
   vcr
   versionist (= 1.4.1)
   webmock
-
-BUNDLED WITH
-   1.11.2

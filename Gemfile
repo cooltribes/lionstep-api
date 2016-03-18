@@ -15,6 +15,7 @@ gem 'mini_magick'
 gem 'smarter_csv', '1.1.0'
 gem 'settingslogic'
 gem 'pundit'
+gem 'puma'
 
 group :development do
   gem 'spring'
