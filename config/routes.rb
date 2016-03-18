@@ -45,5 +45,9 @@ Rails.application.routes.draw do
     get 'tests/results', to: 'tests#results'
     get 'tests/step/:step', to: 'tests#step'
 
+    get 'countries', to: 'countries#index'
+    get 'countries/:country_code/cities', to: 'countries#show'
+
+    get 'languages', to: 'languages#index'
   end
 end

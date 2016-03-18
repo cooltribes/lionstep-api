@@ -5,12 +5,12 @@ RSpec.describe "TestProcessador", type: :lib do
   let(:values) do
     values = {
       :extraversion => 3,
-      :feeling => 1,
-      :introversion => 3,
-      :judging => -2,
-      :intuition => 2,
+      :feeling => 3,
+      :introversion => 1,
+      :judging => 3,
+      :intuition => 3,
       :perceiving => 2,
-      :sensing => 2,
+      :sensing => 1,
       :thinking => 1
     }
     OpenStruct.new(values)
@@ -19,7 +19,7 @@ RSpec.describe "TestProcessador", type: :lib do
   describe "#type" do
     it "should return the type of results" do
       test = TestProcessador.new(values)
-      expect(test.type).to eq("ENFP")
+      expect(test.type).to eq("ENFJ")
     end
   end
 
@@ -33,7 +33,7 @@ RSpec.describe "TestProcessador", type: :lib do
   describe "#name" do
     it "should return a name of the results" do
       test = TestProcessador.new(values)
-      expect(test.name).to eq("Tenaz")
+      expect(test.name).to eq("Protagonista")
     end
   end
 end
