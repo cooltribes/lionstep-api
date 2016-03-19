@@ -1,4 +1,4 @@
-class V1::TestsController < ApplicationController
+class V1::TestsController < V1::BaseController
 
   def step
     step = get_step_param

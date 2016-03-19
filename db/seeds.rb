@@ -22,6 +22,14 @@ SmarterCSV.process(countries_file, options) do |array|
 end
 countries_file.close
 
+#Initial Universities
+puts "Loading initial Universities... "
+universities_file = File.open("db/data/initial_universities.csv", "r:ISO-8859-5")
+SmarterCSV.process(universities_file) do |array|
+  University.find_or_create_by(array.first)
+end
+universities_file.close
+
 #Initial Cities
 puts "Loading initial Cities... this take a few minutes..."
 cities_file = File.open("db/data/initial_cities.csv", "r:ISO-8859-5")

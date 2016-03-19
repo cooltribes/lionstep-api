@@ -2,6 +2,11 @@ class V1::Users::ProfessionalExperiencesController < V1::BaseController
   before_action :set_user
   before_action :set_experience, except: :create
 
+  def index
+    experiences = current_user.profesional_experiences
+    render json: experiences
+  end
+
   def create
     authorize_user @user
     service = ::Experiences::CreateExperience.new(@user, experience_params, type: "professional")

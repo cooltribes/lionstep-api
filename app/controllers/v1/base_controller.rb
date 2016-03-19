@@ -1,9 +1,12 @@
 class V1::BaseController < ApplicationController
+  include DeviseTokenAuth::Concerns::SetUserByToken
   include Pundit
+
   before_action :authenticate_user!
 
 
   private
+
   def authorize_user(user)
     Pundit::NotAuthorizedError unless user == current_user
   end
