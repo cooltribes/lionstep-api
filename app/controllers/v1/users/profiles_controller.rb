@@ -21,7 +21,8 @@ class V1::Users::ProfilesController < V1::BaseController
   end
 
   def profile_params
-    params.permit(:first_name, :last_name, :born_date, :country_code, :city, :avatar)
+    params.permit(:first_name, :last_name, :born_date, :country_code, :city, :avatar,
+      :driver_license)
   end
 
 end

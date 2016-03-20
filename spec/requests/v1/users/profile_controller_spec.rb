@@ -5,12 +5,12 @@ describe V1::Users::ProfilesController do
 
   let(:valid_params) do
     { first_name: "Armando", last_name: "Mendoza", born_date: "21-08-1980",
-      country_code: "VE", city: "San Cristobal" }
+      country_code: "VE", city: "San Cristobal", driver_license: false }
   end
 
   let(:invalid_params) do
     { first_name: "", last_name: "Mendoza", born_date: "21-08-1980",
-      country_code: "VE", city: "San Cristobal" }
+      country_code: "VE", city: "San Cristobal", driver_license: false }
   end
 
   describe 'PUT /profiles' do
@@ -22,6 +22,7 @@ describe V1::Users::ProfilesController do
 
         expect(response.status).to eq(200)
         expect(json["first_name"]).to eq("Armando")
+        expect(json["driver_license"]).to eq(false)
       end
     end
 
