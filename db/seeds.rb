@@ -9,7 +9,7 @@ User.create!(email: "admin@lionstep.com", password: "1234567890", password_confi
 puts "Loading initial Sectors..."
 sectors_file = File.open("db/data/initial_sectors.csv", "r:ISO-8859-5")
 SmarterCSV.process(sectors_file) do |array|
-  City.find_or_create_by(array.first)
+  Sector.find_or_create_by(array.first)
 end
 sectors_file.close
 

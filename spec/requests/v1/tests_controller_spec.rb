@@ -27,6 +27,7 @@ describe V1::TestsController do
         current_user.test_result.update_column(:complete, true)
         get "/tests/results", {}, request_headers_for(current_user)
         expect(response.status).to eq(200)
+        expect(json).to have_key("image_name")
       end
     end
 

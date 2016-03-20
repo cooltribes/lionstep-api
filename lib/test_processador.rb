@@ -13,8 +13,24 @@ class TestProcessador
     "thinking" => "T"
   }
 
-  TYPES = [ "INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP",
-    "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"]
+  DIMENSIONS_IMAGE_NAME = {
+    "extraversion" => "E",
+    "feeling" => "F",
+    "introversion" => "I",
+    "judging" => "J",
+    "intuition" => "N",
+    "perceiving" => "P",
+    "sensing" => "S",
+    "thinking" => "T"
+  }
+
+
+  TYPES = { "INTJ" => "structured", "INTP" => "logical", "ENTJ" => "commander",
+    "ENTP" => "rhetorical", "INFJ" => "respectful", "INFP" => "mediador",
+    "ENFJ" => "protagonist", "ENFP" => "tenacious", "ISTJ" => "logical",
+    "ISFJ" => "defender", "ESTJ" => "executive", "ESFJ" => "diplomatic",
+    "ISTP" => "virtuous", "ISFP" => "aventurous", "ESTP" => "entrepreneur",
+    "ESFP" => "animator"}
 
   OPPOSITES = {
     "introversion" => "extraversion",
@@ -30,12 +46,13 @@ class TestProcessador
   end
 
   def self.type_information
-    TYPES.each_with_object({}) do |type, information|
+    TYPES.keys.each_with_object({}) do |type, information|
       information[type] = {
         name: I18n.t("test.types.#{type}.name"),
         description: I18n.t("test.types.#{type}.description"),
         top: I18n.t("test.types.#{type}.top"),
-        flop: I18n.t("test.types.#{type}.flop")
+        flop: I18n.t("test.types.#{type}.flop"),
+        image_name: TYPES[type]
       }
     end
   end
@@ -68,6 +85,10 @@ class TestProcessador
 
   def flop
     TestProcessador.type_information[type][:flop]
+  end
+
+  def image_name
+    TestProcessador.type_information[type][:image_name]
   end
 
   private

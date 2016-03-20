@@ -50,5 +50,6 @@ Rails.application.routes.draw do
 
     get 'languages', to: 'languages#index'
     get 'universities', to: 'universities#index'
+    get 'sectors', to: 'sectors#index'
   end
 end
