@@ -13,6 +13,14 @@ SmarterCSV.process(sectors_file) do |array|
 end
 sectors_file.close
 
+#Initial languages
+puts "Loading initial Languages..."
+languages_file = File.open("db/data/initial_languages.csv", "r:ISO-8859-5")
+SmarterCSV.process(languages_file) do |array|
+  Language.find_or_create_by(array.first)
+end
+languages_file.close
+
 #Initial Countries
 puts "Loading initial Countries..."
 countries_file = File.open("db/data/initial_countries.csv", "r:ISO-8859-5")

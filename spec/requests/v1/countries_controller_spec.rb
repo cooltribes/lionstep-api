@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe V1::Albums::PicturesController do
+describe V1::CountriesController do
   let!(:current_user){ User.make!(:confirmed) }
   let(:country){ Country.make! }
 

@@ -49,5 +49,6 @@ Rails.application.routes.draw do
     get 'countries/:country_code/cities', to: 'countries#show'
 
     get 'languages', to: 'languages#index'
+    get 'universities', to: 'universities#index'
   end
 end
