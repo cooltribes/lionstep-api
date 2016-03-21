@@ -1,14 +1,14 @@
 es:
   test:
     question:
-      extraversion: A menudo te sorprendes imaginando tu futuro personal y/o profesional.
-      intuition: No te cuesta mucho empezar a socializar en un nuevo entorno.
-      feeling: Preferirías que tu hijo/a creciera siendo muy educado/a, antes que muy hábil.
-      perceiving: Mantener tus opciones abiertas es más importante que tener una lista de cosas que hacer en el día.
-      introversion: Tu energía trabajando sube y baja repentinamente, en vez de tener un nivel de energía constante durante toda la jornada.
-      sensing: Eres más practico/a que creativo/a.
-      thinking: En términos generales, te fías más de tu experiencia que de tu imaginación.
-      judging: Se organizado/a es más importante que ser flexible.
+      extraversion: ¿A menudo te sorprendes imaginando tu futuro personal y/o profesional?.
+      intuition: ¿No te cuesta mucho empezar a socializar en un nuevo entorno?.
+      feeling: ¿Preferirías que tu hijo/a creciera siendo muy educado/a, antes que muy hábil?.
+      perceiving: ¿Mantener tus opciones abiertas es más importante que tener una lista de cosas que hacer en el día?.
+      introversion: ¿Tu energía trabajando sube y baja repentinamente, en vez de tener un nivel de energía constante durante toda la jornada?.
+      sensing: ¿Eres más practico/a que creativo/a?.
+      thinking: ¿En términos generales, te fías más de tu experiencia que de tu imaginación?.
+      judging: ¿Se organizado/a es más importante que ser flexible?.
     types:
       INTJ:
         name: Estructurado/a
