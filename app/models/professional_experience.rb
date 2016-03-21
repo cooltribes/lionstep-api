@@ -12,11 +12,6 @@ class ProfessionalExperience < ActiveRecord::Base
   has_many :skills, through: :professional_skills
 
   ### Validations
-  validates_presence_of :position, :organization, :country_code, :city, :sector_id
-
-  ### Instance Methods
-
-  def full_name
-  end
+  validates_presence_of :position, :organization #, :country_code, :city, :sector_id
 
 end
