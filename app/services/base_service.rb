@@ -32,7 +32,7 @@
 
     def check_array_of_hashes(collection)
       unless collection.is_a?(Array) && collection.all? {|rec| rec.is_a? Hash }
-        set_as_invalid
+        set_as_invalid!
         raise ArgumentError.new("The collection is not an Array of Hashes")
       end
     end
