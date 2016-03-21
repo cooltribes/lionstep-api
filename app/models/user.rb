@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
   has_many :user_skills, dependent: :destroy
   has_many :skills, through: :user_skills
   has_many :oauth_providers, dependent: :destroy
+  has_many :user_extra_activities, dependent: :destroy
+  has_many :extra_activities, through: :user_extra_activities
 
 
   ### Nested Atrributes

@@ -34,6 +34,9 @@ Rails.application.routes.draw do
       resources :languages, only: actions, module: 'users'
 
       resources :albums, only: actions, module: 'users'
+
+      resources :extra_activities, only: actions, module: 'users'
+
     end
 
     scope 'albums/:album_id', as: 'album' do

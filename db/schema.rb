@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160320232318) do
+ActiveRecord::Schema.define(version: 20160321195621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,12 @@ ActiveRecord::Schema.define(version: 20160320232318) do
     t.string   "cc_fips"
     t.string   "cc_iso"
     t.string   "tld"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "extra_activities", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -244,6 +250,19 @@ ActiveRecord::Schema.define(version: 20160320232318) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_extra_activities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "extra_activity_id"
+    t.integer  "level",             default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.datetime "deleted_at"
+  end
+
+  add_index "user_extra_activities", ["deleted_at"], name: "index_user_extra_activities_on_deleted_at", using: :btree
+  add_index "user_extra_activities", ["extra_activity_id"], name: "index_user_extra_activities_on_extra_activity_id", using: :btree
+  add_index "user_extra_activities", ["user_id"], name: "index_user_extra_activities_on_user_id", using: :btree
+
   create_table "user_skills", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "skill_id"
@@ -300,6 +319,8 @@ ActiveRecord::Schema.define(version: 20160320232318) do
   add_foreign_key "professional_skills", "skills"
   add_foreign_key "profiles", "users"
   add_foreign_key "test_results", "users"
+  add_foreign_key "user_extra_activities", "extra_activities"
+  add_foreign_key "user_extra_activities", "users"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
 end

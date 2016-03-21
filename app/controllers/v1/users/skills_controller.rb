@@ -2,7 +2,7 @@ class V1::Users::SkillsController < V1::BaseController
   before_filter :set_user
 
   def index
-    skills = current_user.skills
+    skills = current_user.user_skills
     render json: skills
   end
 
