@@ -3,7 +3,7 @@ class V1::CountriesController < V1::BaseController
 
   def index
     countries = Country.ransack(name_cont: params[:term]).result
-    render json: countries.as_json(only:[:name, :cc_iso])
+    render json: countries.as_json(only:[:cc_iso], methods: [:name])
   end
 
   def show
