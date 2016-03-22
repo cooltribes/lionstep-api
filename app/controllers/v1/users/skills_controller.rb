@@ -8,7 +8,7 @@ class V1::Users::SkillsController < V1::BaseController
 
   def create
     authorize_user @user
-    service = ::Skills::AddSkillsToUser.new(@user, skills_params[:skills])
+    service = ::Skills::AddSkillsToUser.new(@user, skills_params[:skills], current_locale)
     if service.call
       render json: service.user_skills, status: :created
     else

@@ -66,6 +66,7 @@ end
 
 Skill.blueprint do
   name { "Skill #{sn}" }
+  locale { "en" }
 end
 
 Language.blueprint do
