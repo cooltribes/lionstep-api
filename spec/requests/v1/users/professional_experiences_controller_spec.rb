@@ -29,7 +29,7 @@ describe V1::Users::ProfessionalExperiencesController do
       it "Should return a json with errors" do
         post user_professional_experiences_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
-        expect(json["position"]).to eq(["can't be blank"])
+        expect(json["position"]).to eq([I18n.t("errors.messages.blank")])
       end
     end
   end
