@@ -35,7 +35,7 @@ RSpec.describe Contacts::SaveInBatch, type: :service do
         contacts = Contacts::SaveInBatch.new(current_user, invalid_params)
         expect(contacts.call).to be false
         expect(contacts.errors.count).to eq(2)
-        expect(contacts.errors.first[:info]).to eq("can't be blank")
+        expect(contacts.errors.first[:info]).to eq(I18n.t("errors.messages.blank"))
       end
     end
   end

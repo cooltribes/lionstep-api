@@ -31,7 +31,7 @@ describe V1::Users::ProfilesController do
         put user_profile_path(current_user), invalid_params, request_headers_for(current_user)
 
         expect(response.status).to eq(422)
-        expect(json["first_name"]).to eq(["can't be blank"])
+        expect(json["first_name"]).to eq([I18n.t("errors.messages.blank")])
       end
     end
   end

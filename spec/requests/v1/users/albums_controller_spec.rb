@@ -40,7 +40,7 @@ describe V1::Users::AlbumsController do
       it "Should return a json with errors" do
         post user_albums_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
-        expect(json["name"]).to eq(["can't be blank"])
+        expect(json["name"]).to eq([I18n.t("errors.messages.blank")])
       end
     end
   end

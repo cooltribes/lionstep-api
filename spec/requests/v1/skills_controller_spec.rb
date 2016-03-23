@@ -10,9 +10,7 @@ describe V1::SkillsController do
       I18n.locale = "es"
       get "/skills", {}, request_headers_for(current_user)
       expect(response.status).to eq(200)
-      expect(json).to eq([
-        {"id"=>3, "name"=>"Sector-0-es"}, {"id"=>4, "name"=>"Sector-1-es"}
-      ])
+      expect(json.first["name"]).to eq("Sector-0-es")
     end
   end
 

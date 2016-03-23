@@ -25,7 +25,7 @@ describe V1::Users::ContactsController do
       it "Should return a json with errors" do
         post user_contacts_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
-        expect(json["errors"]["contact_type"]).to eq(["is not included in the list"])
+        expect(json["errors"]["contact_type"]).to eq([I18n.t("errors.messages.inclusion")])
       end
     end
   end
@@ -52,7 +52,7 @@ describe V1::Users::ContactsController do
         post batch_user_contacts_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
         expect(json[0]["index"]).to eq(0)
-        expect(json[0]["contact_type"]).to eq("is not included in the list")
+        expect(json[0]["contact_type"]).to eq(I18n.t("errors.messages.inclusion"))
       end
     end
   end
