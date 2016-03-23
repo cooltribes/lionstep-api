@@ -5,4 +5,7 @@ class Skill < ActiveRecord::Base
 
   ### Validations
   validates :name, uniqueness: true, presence: true
+
+  ### Scopes
+  scope :for, -> (locale){ where(locale: locale)}
 end

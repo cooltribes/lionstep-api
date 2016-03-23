@@ -11,7 +11,7 @@ RSpec.describe Skills::AddSkillsToUser, type: :service do
 
   describe "#call" do
     it "should add skill_level to user and create a skill if not exists" do
-      service = Skills::AddSkillsToUser.new(current_user, skill_levels_collection)
+      service = Skills::AddSkillsToUser.new(current_user, skill_levels_collection, "en")
       expect{
         service.call
       }.to change(Skill, :count).by(1)

@@ -5,6 +5,14 @@ puts "Creating initial user..."
 User.create!(email: "admin@lionstep.com", password: "1234567890", password_confirmation: "1234567890",
   confirmed_at: (Date.today - 1), confirmation_sent_at: (Date.today - 2))
 
+#Initial Skills
+puts "Loading initial Skills... this take a few minutes..."
+skills_file = File.open("db/data/initial_skills.csv", "r:ISO-8859-5")
+SmarterCSV.process(skills_file) do |array|
+  Skill.find_or_create_by(array.first)
+end
+skills_file.close
+
 #Initial Sectors
 puts "Loading initial Sectors..."
 sectors_file = File.open("db/data/initial_sectors.csv", "r:ISO-8859-5")
