@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322210614) do
+ActiveRecord::Schema.define(version: 20160323185510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160322210614) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.datetime "deleted_at"
+    t.boolean  "current"
   end
 
   add_index "academic_experiences", ["city"], name: "index_academic_experiences_on_city", using: :btree

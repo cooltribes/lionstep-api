@@ -45,7 +45,7 @@ class V1::Users::AcademicExperiencesController < V1::BaseController
 
   def experience_params
     params.permit(:degree, :institution, :start_date, :end_date, :minimum_grade,
-      :maximum_grade, :actual_grade, :country_code, :city, skills: [])
+      :maximum_grade, :actual_grade, :country_code, :city, skills: [], :current)
   end
 
 end
