@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323185510) do
+ActiveRecord::Schema.define(version: 20160328184734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,13 +214,16 @@ ActiveRecord::Schema.define(version: 20160323185510) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "locale"
   end
+
+  add_index "sectors", ["locale"], name: "index_sectors_on_locale", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "locale"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "locale",     default: "en"
   end
 
   add_index "skills", ["locale"], name: "index_skills_on_locale", using: :btree

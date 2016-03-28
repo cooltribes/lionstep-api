@@ -1,148 +1,295 @@
-NAME
-Accounting
-Airlines/Aviation
-Alternative Dispute Resolution
-Alternative Medicine
-Animation
-Apparel & Fashion
-Architecture & Planning
-Arts and Crafts
-Automotive
-Aviation & Aerospace
-Banking
-Biotechnology
-Broadcast Media
-Building Materials
-Business Supplies and Equipment
-Capital Markets
-Chemicals
-Civic & Social Organization
-Civil Engineering
-Commercial Real Estate
-Computer & Network Security
-Computer Games
-Computer Hardware
-Computer Networking
-Computer Software
-Construction
-Consumer Electronics
-Consumer Goods
-Consumer Services
-Cosmetics
-Dairy
-Defense & Space
-Design
-Education Management
-E-Learning
-Electrical/Electronic Manufacturing
-Entertainment
-Environmental Services
-Events Services
-Executive Office
-Facilities Services
-Farming
-Financial Services
-Fine Art
-Fishery
-Food & Beverages
-Food Production
-Fund-Raising
-Furniture
-Gambling & Casinos
-Glass, Ceramics & Concrete
-Government Administration
-Government Relations
-Graphic Design
-Health, Wellness and Fitness
-Higher Education
-Hospital & Health Care
-Hospitality
-Human Resources
-Import and Export
-Individual & Family Services
-Industrial Automation
-Information Services
-Information Technology and Services
-Insurance
-International Affairs
-International Trade and Development
-Internet
-Investment Banking
-Investment Management
-Judiciary
-Law Enforcement
-Law Practice
-Legal Services
-Legislative Office
-Leisure, Travel & Tourism
-Libraries
-Logistics and Supply Chain
-Luxury Goods & Jewelry
-Machinery
-Management Consulting
-Maritime
-Marketing and Advertising
-Market Research
-Mechanical or Industrial Engineering
-Media Production
-Medical Devices
-Medical Practice
-Mental Health Care
-Military
-Mining & Metals
-Motion Pictures and Film
-Museums and Institutions
-Music
-Nanotechnology
-Newspapers
-Nonprofit Organization Management
-Oil & Energy
-Online Media
-Outsourcing/Offshoring
-Package/Freight Delivery
-Packaging and Containers
-Paper & Forest Products
-Performing Arts
-Pharmaceuticals
-Philanthropy
-Photography
-Plastics
-Political Organization
-Primary/Secondary Education
-Printing
-Professional Training & Coaching
-Program Development
-Public Policy
-Public Relations and Communications
-Public Safety
-Publishing
-Railroad Manufacture
-Ranching
-Real Estate
-Recreational Facilities and Services
-Religious Institutions
-Renewables & Environment
-Research
-Restaurants
-Retail
-Security and Investigations
-Semiconductors
-Shipbuilding
-Sporting Goods
-Sports
-Staffing and Recruiting
-Supermarkets
-Telecommunications
-Textiles
-Think Tanks
-Tobacco
-Translation and Localization
-Transportation/Trucking/Railroad
-Utilities
-Venture Capital & Private Equity
-Veterinary
-Warehousing
-Wholesale
-Wine and Spirits
-Wireless
-Writing and Editing
+name;locale
+Accounting;en
+Airlines/Aviation;en
+Alternative Dispute Resolution;en
+Alternative Medicine;en
+Animation;en
+Apparel & Fashion;en
+Architecture & Planning;en
+Arts and Crafts;en
+Automotive;en
+Aviation & Aerospace;en
+Banking;en
+Biotechnology;en
+Broadcast Media;en
+Building Materials;en
+Business Supplies and Equipment;en
+Capital Markets;en
+Chemicals;en
+Civic & Social Organization;en
+Civil Engineering;en
+Commercial Real Estate;en
+Computer & Network Security;en
+Computer Games;en
+Computer Hardware;en
+Computer Networking;en
+Computer Software;en
+Construction;en
+Consumer Electronics;en
+Consumer Goods;en
+Consumer Services;en
+Cosmetics;en
+Dairy;en
+Defense & Space;en
+Design;en
+Education Management;en
+E-Learning;en
+Electrical/Electronic Manufacturing;en
+Entertainment;en
+Environmental Services;en
+Events Services;en
+Executive Office;en
+Facilities Services;en
+Farming;en
+Financial Services;en
+Fine Art;en
+Fishery;en
+Food & Beverages;en
+Food Production;en
+Fund-Raising;en
+Furniture;en
+Gambling & Casinos;en
+Glass  Ceramics & Concrete;en
+Government Administration;en
+Government Relations;en
+Graphic Design;en
+Health  Wellness and Fitness;en
+Higher Education;en
+Hospital & Health Care;en
+Hospitality;en
+Human Resources;en
+Import and Export;en
+Individual & Family Services;en
+Industrial Automation;en
+Information Services;en
+Information Technology and Services;en
+Insurance;en
+International Affairs;en
+International Trade and Development;en
+Internet;en
+Investment Banking;en
+Investment Management;en
+Judiciary;en
+Law Enforcement;en
+Law Practice;en
+Legal Services;en
+Legislative Office;en
+Leisure Travel & Tourism;en
+Libraries;en
+Logistics and Supply Chain;en
+Luxury Goods & Jewelry;en
+Machinery;en
+Management Consulting;en
+Maritime;en
+Marketing and Advertising;en
+Market Research;en
+Mechanical or Industrial Engineering;en
+Media Production;en
+Medical Devices;en
+Medical Practice;en
+Mental Health Care;en
+Military;en
+Mining & Metals;en
+Motion Pictures and Film;en
+Museums and Institutions;en
+Music;en
+Nanotechnology;en
+Newspapers;en
+Nonprofit Organization Management;en
+Oil & Energy;en
+Online Media;en
+Outsourcing/Offshoring;en
+Package/Freight Delivery;en
+Packaging and Containers;en
+Paper & Forest Products;en
+Performing Arts;en
+Pharmaceuticals;en
+Philanthropy;en
+Photography;en
+Plastics;en
+Political Organization;en
+Primary/Secondary Education;en
+Printing;en
+Professional Training & Coaching;en
+Program Development;en
+Public Policy;en
+Public Relations and Communications;en
+Public Safety;en
+Publishing;en
+Railroad Manufacture;en
+Ranching;en
+Real Estate;en
+Recreational Facilities and Services;en
+Religious Institutions;en
+Renewables & Environment;en
+Research;en
+Restaurants;en
+Retail;en
+Security and Investigations;en
+Semiconductors;en
+Shipbuilding;en
+Sporting Goods;en
+Sports;en
+Staffing and Recruiting;en
+Supermarkets;en
+Telecommunications;en
+Textiles;en
+Think Tanks;en
+Tobacco;en
+Translation and Localization;en
+Transportation/Trucking/Railroad;en
+Utilities;en
+Venture Capital & Private Equity;en
+Veterinary;en
+Warehousing;en
+Wholesale;en
+Wine and Spirits;en
+Wireless;en
+Writing and Editing;en
+Contabilidad;es
+Aeronﾇutica / Aviaciﾗn;es
+Resoluciﾗn alternativa de conflictos;es
+Medicina alternativa;es
+Animaciﾗn;es
+Industria textil y moda;es
+Arquitectura y planificaciﾗn;es
+Artes y manualidades;es
+Automotor;es
+Aeroespacial y aviaciﾗn;es
+Banca;es
+Biotecnologﾒa;es
+Medios de difusiﾗn;es
+Materiales de construcciﾗn;es
+Artﾒculos de oficina y equipamiento;es
+Mercados de capitales;es
+Productos quﾒmicos;es
+Organizaciﾗn cﾒvica y social;es
+Ingenieria civil;es
+Bienes Raﾒces ;es
+Seguridad informatica;es
+Juegos de computadora;es
+Hardware ;es
+Redes - Networking;es
+Software;es
+Construcciﾗn;es
+Electrﾗnica de consumo;es
+Bienes de consumo;es
+Servicios al Consumidor;es
+Productos cosmﾎticos;es
+Lecherﾒa;es
+Defensa del espacio;es
+Diseﾖo;es
+Administraciﾗn de educaciﾗn;es
+E-Learning;es
+Manufactura elﾎctrica / electrﾗnica;es
+Entretenimiento;es
+Servicios ambientales;es
+Servicios de eventos;es
+Oficina Ejecutiva;es
+Instalaciones Servicios;es
+Agricultura;es
+Servicios financieros;es
+Bellas Artes;es
+Pesquerﾒa;es
+Alimentos y bebidas;es
+La producciﾗn de alimentos;es
+La recaudaciﾗn de fondos;es
+Muebles;es
+Apuestas y casinos;es
+Cristal, cerﾇmicas y concreto;es
+Administraciﾗn gubernamental;es
+relaciones Gubernamentales;es
+Diseﾖo grﾇfico;es
+Salud Wellness y Fitness;es
+Educaciﾗn superior;es
+Atenciﾗn sanitaria y hospitalaria;es
+Hospitalidad;es
+Recursos humanos;es
+Importaciones y exportaciones;es
+Servicios sociales;es
+Automatizaciﾗn industrial;es
+Servicios de informaciﾗn;es
+Servicios de tecnologia IT;es
+Seguros;es
+Asuntos Internacionales;es
+Desarrollo y comercio internacional;es
+Internet;es
+Banca de inversiﾗn;es
+Gestiﾗn de inversiones;es
+Poder judicial;es
+Orden pﾜblico;es
+Abogacﾒa;es
+Servicios jurﾒdicos;es
+Oficina legislativa;es
+Ocio viajes turismo;es
+Bibliotecario;es
+Logﾒstica y cadena de suministros;es
+Artﾒculos de lujo y joyas;es
+Maquinaria;es
+Consultorﾒa de gestiﾗn;es
+Marﾒtimo;es
+Marketing y publicidad;es
+Investigaciﾗn de mercado;es
+Ingenierﾒa industrial o mecﾇnica;es
+Producciﾗn de medios;es
+Dispositivos mﾎdicos;es
+Prﾇctica mﾎdica;es
+Cuidado de la salud mental;es
+Militar;es
+Minerﾒa y Metales;es
+Pelﾒculas y cine;es
+Museos e instituciones;es
+Mﾜsica;es
+Nanotecnologﾒa;es
+Prensa;es
+Gestiﾗn de organizaciones sin ﾇnimo de lucro;es
+Petrﾗleo y energﾒa;es
+Medios de comunicaciﾗn en lﾒnea - Online media;es
+Subcontrataciones / Offshoring;es
+Paquete / carga de la entrega;es
+Embalaje y contenedores;es
+Productos de papel y forestales;es
+Artes escﾎnicas;es
+productos farmacﾎuticos;es
+Filantropﾒa;es
+Fotografﾒa;es
+Plﾇstica;es
+Organizaciﾗn polﾒtica;es
+Educaciﾗn primaria / secundaria;es
+Imprenta;es
+Formaciﾗn profesional y capacitaciﾗn;es
+Desarrollo de programas;es
+Polﾒtica pﾜblica;es
+Relaciones pﾜblicas y comunicaciones;es
+Seguridad Pﾜblica;es
+Publicaciﾗn;es
+Fabricaciﾗn de ferrocarril;es
+Ganaderﾒa;es
+Bienes raﾒces;es
+Instalaciones y servicios de recreo;es
+Las instituciones religiosas;es
+Energﾒa renovable y medio ambiente;es
+Investigaciﾗn;es
+Gastronomﾒa;es
+Venta al por menor;es
+Seguridad e investigaciones;es
+Semiconductores;es
+Construcciﾗn naval;es
+Artﾒculos deportivos;es
+Deportes;es
+Dotaciﾗn y selecciﾗn de contrataciones;es
+Supermercados;es
+Telecomunicaciones;es
+Textiles;es
+Comitﾎ de expertos;es
+Tabaco;es
+Traducciﾗn y localizaciﾗn;es
+Transporte / Camiones / Ferrocarril;es
+Utilidades;es
+Capital de riesgo y de capital privado;es
+Veterinario;es
+Almacenamiento;es
+Venta al por mayor;es
+Vinos y licores;es
+Servicios Inalﾇmbricos - Wireless;es
+Escritura y ediciﾗn;es

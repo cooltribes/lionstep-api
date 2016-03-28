@@ -7,7 +7,7 @@ User.create!(email: "admin@lionstep.com", password: "1234567890", password_confi
 
 #Initial Skills
 puts "Loading initial Skills... this take a few minutes..."
-skills_file = File.open("db/data/initial_skills.csv", "r:ISO-8859-5")
+skills_file = File.open("db/data/initial_skills.csv", "r:utf-8")
 SmarterCSV.process(skills_file) do |array|
   Skill.find_or_create_by(array.first)
 end
@@ -15,8 +15,8 @@ skills_file.close
 
 #Initial Sectors
 puts "Loading initial Sectors..."
-sectors_file = File.open("db/data/initial_sectors.csv", "r:ISO-8859-5")
-SmarterCSV.process(sectors_file) do |array|
+sectors_file = File.open("db/data/initial_sectors.csv", "r:utf-8")
+SmarterCSV.process(sectors_file, { col_sep: ";"}) do |array|
   Sector.find_or_create_by(array.first)
 end
 sectors_file.close

@@ -4,4 +4,7 @@ class Sector < ActiveRecord::Base
 
   ### Validations
   validates :name, presence: true
+
+  ### Scopes
+  scope :for, -> (locale){ where(locale: locale)}
 end

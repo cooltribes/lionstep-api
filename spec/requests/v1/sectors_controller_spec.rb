@@ -5,10 +5,12 @@ describe V1::SectorsController do
 
   describe "GET /sectors" do
     it "return all sectors" do
-      3.times {|x| Sector.create!(name: "Sector-#{x}")}
+      2.times {|x| Sector.create!(name: "Sector-#{x}-es", locale: "es")}
+      2.times {|x| Sector.create!(name: "Sector-#{x}-en", locale: "en")}
+      I18n.locale = "es"
       get "/sectors", {}, request_headers_for(current_user)
       expect(response.status).to eq(200)
-      expect(json.first["name"]).to eq("Sector-0")
+      expect(json.first["name"]).to eq("Sector-0-es")
     end
   end
 
