@@ -55,5 +55,7 @@ Rails.application.routes.draw do
     get 'universities', to: 'universities#index'
     get 'sectors', to: 'sectors#index'
     get 'skills', to: 'skills#index'
+    get 'academic_areas', to: 'academic_areas#index'
+    get 'academic_diplomas', to: 'academic_diplomas#index'
   end
 end

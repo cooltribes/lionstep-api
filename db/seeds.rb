@@ -54,3 +54,19 @@ SmarterCSV.process(cities_file, options) do |array|
   City.find_or_create_by(array.first)
 end
 cities_file.close
+
+#Initial Diplomas
+puts "Loading initial Diplomas..."
+diplomas_file = File.open("db/data/initial_academic_diplomas.csv", "r:utf-8")
+SmarterCSV.process(diplomas_file) do |array|
+  AcademicDiploma.find_or_create_by(array.first)
+end
+diplomas_file.close
+
+#Initial Areas
+puts "Loading initial Areas..."
+areas_file = File.open("db/data/initial_academic_areas.csv", "r:utf-8")
+SmarterCSV.process(areas_file, { col_sep: ";"}) do |array|
+  AcademicArea.find_or_create_by(array.first)
+end
+areas_file.close

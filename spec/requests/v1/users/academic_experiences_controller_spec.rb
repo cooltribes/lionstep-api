@@ -3,10 +3,13 @@ require 'rails_helper'
 describe V1::Users::AcademicExperiencesController do
   let!(:current_user){ User.make!(:confirmed) }
   let(:experience){ AcademicExperience.make!(user: current_user) }
+  let(:academic_diploma){ AcademicDiploma.create!(name: "Diploma", locale: "es") }
+  let(:academic_area){ AcademicArea.create!(name: "Area", locale: "es") }
 
   let(:valid_params) do
     { degree: "Engineer", institution: "UNET", start_date: "15-02-2010", end_date: "17-06-2015",
-      actual_grade: "PhD", country_code: "US", city: "San Francisco" }
+      actual_grade: "PhD", country_code: "US", city: "San Francisco",
+      academic_diploma_id: academic_diploma.id, academic_area_id: academic_area.id }
   end
 
   let(:invalid_params) do
@@ -20,6 +23,9 @@ describe V1::Users::AcademicExperiencesController do
         post user_academic_experiences_path(current_user), valid_params, request_headers_for(current_user)
         expect(response.status).to eq(201)
         expect(json_attribute("degree")).to eq("Engineer")
+        last_experience = current_user.academic_experiences.last
+        expect(last_experience.academic_diploma).to eq(academic_diploma)
+        expect(last_experience.academic_area).to eq(academic_area)
       end
     end
 

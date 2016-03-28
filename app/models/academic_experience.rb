@@ -7,6 +7,8 @@ class AcademicExperience < ActiveRecord::Base
 
   ### Relations
   belongs_to :user
+  belongs_to :academic_diploma
+  belongs_to :academic_area
   has_many :academic_skills, dependent: :destroy
   has_many :skills, through: :academic_skills
 
