@@ -5,14 +5,6 @@ puts "Creating initial user..."
 User.create!(email: "admin@lionstep.com", password: "1234567890", password_confirmation: "1234567890",
   confirmed_at: (Date.today - 1), confirmation_sent_at: (Date.today - 2))
 
-#Initial Skills
-puts "Loading initial Skills... this take a few minutes..."
-skills_file = File.open("db/data/initial_skills.csv", "r:utf-8")
-SmarterCSV.process(skills_file) do |array|
-  Skill.find_or_create_by(array.first)
-end
-skills_file.close
-
 #Initial Sectors
 puts "Loading initial Sectors..."
 sectors_file = File.open("db/data/initial_sectors.csv", "r:utf-8")
@@ -25,7 +17,7 @@ sectors_file.close
 puts "Loading initial Languages..."
 languages_file = File.open("db/data/initial_languages.csv", "r:ISO-8859-5")
 SmarterCSV.process(languages_file) do |array|
-  Language.find_or_create_by(array.first)
+  Language.create!(array.first)
 end
 languages_file.close
 
@@ -37,6 +29,22 @@ SmarterCSV.process(countries_file, options) do |array|
   Country.find_or_create_by(array.first)
 end
 countries_file.close
+
+#Initial Diplomas
+puts "Loading initial Degrees..."
+degrees_file = File.open("db/data/initial_academic_degrees.csv", "r:utf-8")
+SmarterCSV.process(degrees_file) do |array|
+  AcademicDegree.find_or_create_by(array.first)
+end
+degrees_file.close
+
+#Initial Areas
+puts "Loading initial Areas..."
+areas_file = File.open("db/data/initial_academic_areas.csv", "r:utf-8")
+SmarterCSV.process(areas_file, { col_sep: ";"}) do |array|
+  AcademicArea.find_or_create_by(array.first)
+end
+areas_file.close
 
 #Initial Universities
 puts "Loading initial Universities... "
@@ -55,18 +63,10 @@ SmarterCSV.process(cities_file, options) do |array|
 end
 cities_file.close
 
-#Initial Diplomas
-puts "Loading initial Degrees..."
-degrees_file = File.open("db/data/initial_academic_degrees.csv", "r:utf-8")
-SmarterCSV.process(degrees_file) do |array|
-  AcademicDegree.find_or_create_by(array.first)
+#Initial Skills
+puts "Loading initial Skills... this take a few minutes..."
+skills_file = File.open("db/data/initial_skills.csv", "r:utf-8")
+SmarterCSV.process(skills_file) do |array|
+  Skill.find_or_create_by(array.first)
 end
-degrees_file.close
-
-#Initial Areas
-puts "Loading initial Areas..."
-areas_file = File.open("db/data/initial_academic_areas.csv", "r:utf-8")
-SmarterCSV.process(areas_file, { col_sep: ";"}) do |array|
-  AcademicArea.find_or_create_by(array.first)
-end
-areas_file.close
+skills_file.close
