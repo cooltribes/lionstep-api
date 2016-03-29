@@ -56,12 +56,12 @@ end
 cities_file.close
 
 #Initial Diplomas
-puts "Loading initial Diplomas..."
-diplomas_file = File.open("db/data/initial_academic_diplomas.csv", "r:utf-8")
-SmarterCSV.process(diplomas_file) do |array|
-  AcademicDiploma.find_or_create_by(array.first)
+puts "Loading initial Degrees..."
+degrees_file = File.open("db/data/initial_academic_degrees.csv", "r:utf-8")
+SmarterCSV.process(degrees_file) do |array|
+  AcademicDegree.find_or_create_by(array.first)
 end
-diplomas_file.close
+degrees_file.close
 
 #Initial Areas
 puts "Loading initial Areas..."

@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20160328202053) do
 
   add_index "academic_areas", ["locale"], name: "index_academic_areas_on_locale", using: :btree
 
-  create_table "academic_diplomas", force: :cascade do |t|
+  create_table "academic_degrees", force: :cascade do |t|
     t.string   "name"
     t.string   "locale"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "academic_diplomas", ["locale"], name: "index_academic_diplomas_on_locale", using: :btree
+  add_index "academic_degrees", ["locale"], name: "index_academic_degrees_on_locale", using: :btree
 
   create_table "academic_experiences", force: :cascade do |t|
     t.string   "degree"
@@ -45,16 +45,16 @@ ActiveRecord::Schema.define(version: 20160328202053) do
     t.string   "country_code"
     t.string   "city"
     t.integer  "user_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.datetime "deleted_at"
     t.boolean  "current"
-    t.integer  "academic_diploma_id"
+    t.integer  "academic_degree_id"
     t.integer  "academic_area_id"
   end
 
   add_index "academic_experiences", ["academic_area_id"], name: "index_academic_experiences_on_academic_area_id", using: :btree
-  add_index "academic_experiences", ["academic_diploma_id"], name: "index_academic_experiences_on_academic_diploma_id", using: :btree
+  add_index "academic_experiences", ["academic_degree_id"], name: "index_academic_experiences_on_academic_degree_id", using: :btree
   add_index "academic_experiences", ["city"], name: "index_academic_experiences_on_city", using: :btree
   add_index "academic_experiences", ["country_code"], name: "index_academic_experiences_on_country_code", using: :btree
   add_index "academic_experiences", ["deleted_at"], name: "index_academic_experiences_on_deleted_at", using: :btree
@@ -337,7 +337,7 @@ ActiveRecord::Schema.define(version: 20160328202053) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   add_foreign_key "academic_experiences", "academic_areas"
-  add_foreign_key "academic_experiences", "academic_diplomas"
+  add_foreign_key "academic_experiences", "academic_degrees"
   add_foreign_key "academic_experiences", "users"
   add_foreign_key "academic_skills", "academic_experiences"
   add_foreign_key "academic_skills", "skills"
