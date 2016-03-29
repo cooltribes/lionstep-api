@@ -15,7 +15,7 @@ sectors_file.close
 
 #Initial languages
 puts "Loading initial Languages..."
-languages_file = File.open("db/data/initial_languages.csv", "r:ISO-8859-5")
+languages_file = File.open("db/data/initial_languages.csv", "r:utf-8")
 SmarterCSV.process(languages_file) do |array|
   Language.create!(array.first)
 end
