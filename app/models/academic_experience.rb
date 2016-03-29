@@ -13,6 +13,6 @@ class AcademicExperience < ActiveRecord::Base
   has_many :skills, through: :academic_skills
 
   ### Validations
-  validates_presence_of :degree, :institution #, :country_code, :city
+  validates_presence_of :institution #, :country_code, :city
 
 end
