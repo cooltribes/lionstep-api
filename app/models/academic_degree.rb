@@ -1,4 +1,4 @@
-class AcademicDiploma < ActiveRecord::Base
+class AcademicDegree < ActiveRecord::Base
 
   ### Relations
   has_many :academic_experiences
