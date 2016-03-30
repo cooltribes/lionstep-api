@@ -31,6 +31,12 @@ group :development do
   gem 'foreman'
   gem 'subcontractor'
   gem 'mailcatcher'
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails-collection'
+  gem 'capistrano-sidekiq'
 end
 
 group :test, :development do
