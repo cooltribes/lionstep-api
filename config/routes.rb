@@ -1,4 +1,11 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    username == Settings.sidekiq.username && password == Settings.sidekiq.password
+  end #if Rails.env.production?
+  mount Sidekiq::Web => '/sidekiq'
 
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
     registrations:      'v1/authentication/registrations',

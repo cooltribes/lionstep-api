@@ -1,12 +1,17 @@
 defaults: &defaults
-  ui_endpoint: "www.lvh.me:3000"
-  api_endpoint: "www.lvh.me:4000"
+  api_endpoint: http://localhost:4000
+  ui_endpoint: http://localhost:3000
+  elasticsearch_url: XXXXXXXXXXXXXXXX
+  pusher:
+    app_id: XXXX
+    key: XXXXXXXXX
+    secret: XXXXXXXXX
+  sidekiq:
+    username: XXXX
+    password: XXXXXXXXX
 
 development:
   <<: *defaults
 
 test:
-  <<: *defaults
-
-production:
   <<: *defaults
