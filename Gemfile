@@ -17,6 +17,9 @@ gem 'settingslogic'
 gem 'pundit'
 gem 'puma'
 gem 'ransack', '1.7.0'
+gem 'sidekiq', '4.1.1'
+gem 'redis-namespace'
+gem 'sinatra', :require => nil
 
 group :development do
   gem 'spring'
