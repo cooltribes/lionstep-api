@@ -40,6 +40,10 @@ class User < ActiveRecord::Base
   delegate :first_name, :last_name, :born_date, :country_code, :city, to: :profile
 
   ### Instance Methods
+  def fullname
+    "#{first_name} #{last_name}"
+  end
+
   def role
     ROLE_ID[role_id]
   end

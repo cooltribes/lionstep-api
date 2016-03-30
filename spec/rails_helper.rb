@@ -6,6 +6,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'shoulda/matchers'
 require 'webmock/rspec'
+require 'rspec/active_job'
 require 'vcr'
 
 # WebMock.disable!
@@ -42,14 +43,14 @@ RSpec.configure do |config|
     end
   end
 
-  # # ActiveJob Testing
-  # config.include(RSpec::ActiveJob)
+  # ActiveJob Testing
+  config.include(RSpec::ActiveJob)
 
   # # clean out the queue after each spec
-  # config.after(:each) do
-  #   ActiveJob::Base.queue_adapter.enqueued_jobs = []
-  #   ActiveJob::Base.queue_adapter.performed_jobs = []
-  # end
+  config.after(:each) do
+    ActiveJob::Base.queue_adapter.enqueued_jobs = []
+    ActiveJob::Base.queue_adapter.performed_jobs = []
+  end
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
