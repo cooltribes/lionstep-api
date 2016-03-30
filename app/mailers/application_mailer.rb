@@ -3,7 +3,7 @@ class ApplicationMailer < ActionMailer::Base
 
   def test_completed(user)
     @user = user
-    @result = user.get_test_results[:name]
+    @results = user.get_test_results
     mail to: user.email, subject: "Gracias por participar en nuestro test."
   end
 

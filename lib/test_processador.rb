@@ -52,6 +52,7 @@ class TestProcessador
         description: I18n.t("test.types.#{type}.description"),
         top: I18n.t("test.types.#{type}.top"),
         flop: I18n.t("test.types.#{type}.flop"),
+        adjetives: I18n.t("test.types.#{type}.adjetives"),
         image_name: TYPES[type]
       }
     end
