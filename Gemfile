@@ -30,6 +30,7 @@ group :development do
   gem 'rails-rename', '~> 1.0.0'
   gem 'foreman'
   gem 'subcontractor'
+  gem 'mailcatcher'
 end
 
 group :test, :development do
