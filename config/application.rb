@@ -32,17 +32,17 @@ module LionstepApi
     config.autoload_paths += %W(#{config.root}/lib)
     config.active_record.raise_in_transactional_callbacks = true
     # Cors config
-    config.middleware.insert_after "ActionDispatch::Static", "Rack::Cors" do
-      allow do
-        origins '*'
+    # config.middleware.insert_before "ActionDispatch::Static", "Rack::Cors" do
+    #   allow do
+    #     origins '*'
 
-        resource '*',
-          :headers => :any,
-          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
-          :methods => [:get, :post, :delete, :put, :options, :head],
-          :max_age => 0
-      end
-    end
+    #     resource '*',
+    #       :headers => :any,
+    #       :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+    #       :methods => [:get, :post, :delete, :put, :options, :head],
+    #       :max_age => 0
+    #   end
+    # end
     # Temp
     config.action_mailer.default_url_options = { host: 'example.com' }
   end

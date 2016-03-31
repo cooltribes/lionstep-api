@@ -13,7 +13,7 @@ describe V1::Users::AcademicExperiencesController do
   end
 
   let(:invalid_params) do
-    { degree: "", institution: "UNET", start_date: "15-02-2010", end_date: "17-06-2015",
+    { degree: "", institution: "", start_date: "15-02-2010", end_date: "17-06-2015",
       actual_grade: "PhD", country_code: "US", city: "San Francisco" }
   end
 
@@ -33,7 +33,7 @@ describe V1::Users::AcademicExperiencesController do
       it "Should return a json with errors" do
         post user_academic_experiences_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
-        expect(json["degree"]).to eq([I18n.t("errors.messages.blank")])
+        expect(json["institution"]).to eq([I18n.t("errors.messages.blank")])
       end
     end
   end
