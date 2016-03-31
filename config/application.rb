@@ -32,7 +32,7 @@ module LionstepApi
     config.autoload_paths += %W(#{config.root}/lib)
     config.active_record.raise_in_transactional_callbacks = true
     # Cors config
-    config.middleware.insert_before "ActionDispatch::Static", "Rack::Cors" do
+    config.middleware.insert_after "ActionDispatch::Static", "Rack::Cors" do
       allow do
         origins '*'
 
