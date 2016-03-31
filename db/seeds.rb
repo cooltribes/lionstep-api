@@ -48,7 +48,7 @@ areas_file.close
 
 #Initial Universities
 puts "Loading initial Universities... "
-universities_file = File.open("db/data/initial_universities.csv", "r:ISO-8859-5")
+universities_file = File.open("db/data/initial_universities.csv", "r:utf-8")
 SmarterCSV.process(universities_file) do |array|
   University.find_or_create_by(array.first)
 end
