@@ -31,7 +31,7 @@ module LionstepApi
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.autoload_paths += %W(#{config.root}/lib)
     config.active_record.raise_in_transactional_callbacks = true
-    Cors config
+    # Cors config
     config.middleware.insert_before "ActionDispatch::Static", "Rack::Cors" do
       allow do
         origins '*'
