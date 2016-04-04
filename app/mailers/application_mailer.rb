@@ -1,5 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "lionstep-noreply@lionstep.com"
+  add_template_helper(V1::EmailHelper)
+  default from: "\"Lionstep\" <lionstep-noreply@lionstep.com>"
 
   def test_completed(user)
     @user = user
