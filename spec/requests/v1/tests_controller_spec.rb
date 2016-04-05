@@ -25,6 +25,7 @@ describe V1::TestsController do
     context "With test complete" do
       it "Should return the results of test" do
         current_user.test_result.update_column(:complete, true)
+        current_user.test_result.update_column(:result, "ENFJ")
         get "/tests/results", {}, request_headers_for(current_user)
         expect(response.status).to eq(200)
         expect(json).to have_key("image_name")

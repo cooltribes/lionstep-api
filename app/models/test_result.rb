@@ -10,6 +10,8 @@ class TestResult < ActiveRecord::Base
 
   def check_completed
     if complete_changed?(from: false, to: true)
+      test = TestProcessador.new(self)
+      self.result = test.type
       ApplicationMailer.test_completed(user).deliver_later
     end
   end

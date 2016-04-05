@@ -49,8 +49,7 @@ class User < ActiveRecord::Base
   end
 
   def get_test_results
-    test = TestProcessador.new(test_result)
-    test.results
+    TestProcessador.type_information[test_result.result]
   end
 
   private
