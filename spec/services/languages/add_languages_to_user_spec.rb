@@ -1,22 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Languages::AddLanguagesToUser, type: :service do
+RSpec.describe Registration::UpdateRegistrationStep, type: :service do
   let!(:current_user){ User.make!(:confirmed) }
-  let!(:english){ Language.make!(name: "English")}
-  let!(:spanish){ Language.make!(name: "Spanish")}
-  let(:languages_params){[
-    { language_id: english.id, level: 5 },
-    { language_id: spanish.id, level: 2 }
-  ]}
 
-  describe "#call" do
-    it "should add languages to user" do
-      service = Languages::AddLanguagesToUser.new(current_user, languages_params)
-      expect{
-        service.call
-      }.to change(current_user.languages, :count).by(2)
-      expect(current_user.language_levels.first.level).to eq(5)
-    end
+  it "should extract the step from params and update the step of user" do
+    params = { value: 1, value2: 2, step: "step 1" }
+    expect{
+      Registration::UpdateRegistrationStep.new(current_user, params)
+    }.to change(current_user, :registration_step).from(nil).to("step 1")
   end
 
 end
