@@ -10,6 +10,12 @@ User.blueprint(:confirmed) do
   profile
 end
 
+Admin.blueprint(:confirmed) do
+  email { "admin-#{sn}@gmail.com" }
+  password { "password" }
+  password_confirmation { "password" }
+end
+
 Country.blueprint do
   name { Faker::Address.country }
   cc_fips { Faker::Address.country_code }

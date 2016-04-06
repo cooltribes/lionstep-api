@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end #if Rails.env.production?
   mount Sidekiq::Web => '/sidekiq'
 
+  mount_devise_token_auth_for 'Admin', at: 'auth_admin'
+
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
     registrations:      'v1/authentication/registrations',
     sessions:           'v1/authentication/sessions',
@@ -67,5 +69,9 @@ Rails.application.routes.draw do
     get 'skills', to: 'skills#index'
     get 'academic_areas', to: 'academic_areas#index'
     get 'academic_degrees', to: 'academic_degrees#index'
+
+    namespace :admin do
+      resources :users
+    end
   end
 end
