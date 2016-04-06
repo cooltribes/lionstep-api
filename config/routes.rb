@@ -50,6 +50,9 @@ Rails.application.routes.draw do
       resources :pictures, only: actions, module: 'albums'
     end
 
+    get 'registration', to: 'registration#step'
+    put 'registration', to: 'registration#update'
+
     post 'pictures', to: 'pictures#create'
     put 'tests', to: 'tests#update'
     get 'tests/results', to: 'tests#results'

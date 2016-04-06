@@ -11,6 +11,7 @@ class V1::Users::AcademicExperiencesController < V1::BaseController
     authorize_user @user
     service = ::Experiences::CreateExperience.new(@user, experience_params, type: "academic")
     if service.call
+      ::Registration::UpdateRegistrationStep.new(@user, step)
       render json: service.experience, status: :created
     else
       render json: service.errors, status: :unprocessable_entity
@@ -46,7 +47,7 @@ class V1::Users::AcademicExperiencesController < V1::BaseController
   def experience_params
     params.permit(:degree, :institution, :start_date, :end_date, :minimum_grade,
       :maximum_grade, :actual_grade, :country_code, :city, :current, :academic_degree_id,
-      :academic_area_id, skills: [])
+      :academic_area_id, :step, skills: [])
   end
 
 end

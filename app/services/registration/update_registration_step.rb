@@ -1,9 +1,9 @@
 module Registration
   class UpdateRegistrationStep
 
-    def initialize(user, params)
+    def initialize(user, step)
       @user = user
-      @step = params.fetch(:step, nil)
+      @step = step
       update_step! if @step
     end
 
