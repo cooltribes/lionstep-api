@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Registration::AddLanguagesToUser, type: :service do
+RSpec.describe Languages::AddLanguagesToUser, type: :service do
   let!(:current_user){ User.make!(:confirmed) }
   let!(:english){ Language.make!(name: "English")}
   let!(:spanish){ Language.make!(name: "Spanish")}
