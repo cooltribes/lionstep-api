@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def get_test_results
-    TestProcessador.type_information[test_result.result]
+    test_result.get_results
   end
 
   private

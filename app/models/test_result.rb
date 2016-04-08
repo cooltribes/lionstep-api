@@ -5,6 +5,20 @@ class TestResult < ActiveRecord::Base
   ### Callbacks
   before_update :check_completed
 
+  ### Instance Methods
+
+  def get_results
+    TestProcessador.type_information[result]
+  end
+
+  def adjetives_pluralized(locale="es")
+    locale = locale.to_sym
+    if complete
+      first_adjetive, conector, last_adjetive = get_results[:adjetives].split(" ")
+      "#{first_adjetive.pluralize(locale)} #{conector} #{last_adjetive.pluralize(locale)}"
+    end
+  end
+
 
   private
 

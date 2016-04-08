@@ -11,7 +11,7 @@
 				<div class="message">
 					<p>Gracias por participar en nuestro test.</p>
 
-					<p>Muchas empresas están buscando <b><%= "#{@results[:name]}" %>s </b> como tú.
+					<p>Muchas empresas están buscando <b><%= "#{@results[:name].pluralize(I18n.locale)}" %> </b> como tú.
 					Al ser <b> <%= "#{@results[:adjetives]}" %></b> encajas muy bien en muchos puestos de trabajo.</p>
 
 					<p>Estamos trabajando intensamente para optimizar nuestro algoritmo. Juntos, vamos a revolucionar la forma de encontrar trabajo, hacienda del proceso de selección una experiencia completamente nueva.</p>
