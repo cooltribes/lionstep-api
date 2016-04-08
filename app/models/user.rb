@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
 
   ### Extends and Includes
   include DeviseTokenAuth::Concerns::User
-  include Albumable
 
   ### Relations
   has_one :profile, dependent: :destroy
@@ -34,7 +33,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :oauth_providers
 
   ### Callbacks
-  after_create :initialize_profile, :create_defaults_albums, :create_test
+  after_create :initialize_profile, :create_test
 
   ### Delegations
   delegate :first_name, :last_name, :born_date, :country_code, :city, to: :profile
@@ -56,12 +55,6 @@ class User < ActiveRecord::Base
 
   def initialize_profile
     profile || create_profile
-  end
-
-  def create_defaults_albums
-    albums.create!(name: "default", owner: self)
-    albums.create!(name: "covers", owner: self)
-    albums.create!(name: "avatars", owner: self)
   end
 
   def create_test

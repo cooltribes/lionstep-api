@@ -72,15 +72,3 @@ end
 Language.blueprint do
   name { "Language #{sn}" }
 end
-
-Album.blueprint do
-  name { "Album #{sn}" }
-  owner { User.make!(:confirmed) }
-  albumable { object.owner }
-end
-
-Picture.blueprint do
-  title { "Picture #{sn}" }
-  album { Album.make! }
-  owner { object.album.owner  }
-end
