@@ -1,8 +1,6 @@
-class V1::BaseController < ApplicationController
-  include Pundit
+class V1::Admin::BaseController < ApplicationController
 
-  before_action :authenticate_user!
-
+  before_action :authenticate_admin!
 
   private
 

@@ -17,7 +17,20 @@ module RequestsHelper
   end
 
   def request_headers_for(user)
-    post "/auth/sign_in", { email: current_user.email, password: current_user.password }
+    post "/auth/sign_in", { email: user.email, password: user.password }
+    headers = response.headers
+    {
+      "Accept"        => "application/vnd.lionstep.com; version=1",
+      "access-token"  =>  headers["access-token"],
+      "client"        =>  headers["client"],
+      "expiry"        =>  headers["expiry"],
+      "token-type"    =>  headers["token-type"],
+      "uid"           =>  headers["uid"]
+    }
+  end
+
+  def request_admin_headers_for(admin)
+    post "/auth_admin/sign_in", { email: admin.email, password: admin.password }
     headers = response.headers
     {
       "Accept"        => "application/vnd.lionstep.com; version=1",
