@@ -1,4 +1,5 @@
 class V1::Admin::BaseController < ApplicationController
+  include DeviseTokenAuth::Concerns::SetUserByToken
 
   before_action :authenticate_admin!
 

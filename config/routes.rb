@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end #if Rails.env.production?
   mount Sidekiq::Web => '/sidekiq'
 
-  mount_devise_token_auth_for 'Admin', at: 'auth_admin'
+  mount_devise_token_auth_for 'Admin', at: 'auth_admin', skip: [:registrations, :omniauth_callbacks]
 
-  mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+  mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks], controllers: {
     registrations:      'v1/authentication/registrations',
     sessions:           'v1/authentication/sessions',
     token_validations:  'v1/authentication/token_validations'

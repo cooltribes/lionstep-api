@@ -14,6 +14,8 @@ Admin.blueprint(:confirmed) do
   email { "admin-#{sn}@gmail.com" }
   password { "password" }
   password_confirmation { "password" }
+  confirmed_at { Date.today - 1 }
+  confirmation_sent_at { Date.today - 2 }
 end
 
 Country.blueprint do

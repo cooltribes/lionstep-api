@@ -40,6 +40,7 @@ describe "Auth Controllers" do
       params = {email: current_user.email, password: current_user.password}
       post "/auth/sign_in", params
       expect(response.status).to eq(200)
+      expect(response.headers).to have_key("access-token")
       expect(json["data"]["attributes"]["email"]).to eq(current_user.email)
     end
 
