@@ -57,7 +57,8 @@ ProfessionalExperience.blueprint do
 end
 
 AcademicExperience.blueprint do
-  degree { "Engineer" }
+  academic_area { AcademicArea.make! }
+  academic_degree { AcademicDegree.make! }
   institution { Faker::University.name }
   start_date { Date.today - 10.years }
   end_date { Date.today - 5.years }
@@ -66,6 +67,16 @@ AcademicExperience.blueprint do
   actual_grade { "Engineer" }
   country { Country.make! }
   city { object.country.cities.first.name }
+end
+
+AcademicArea.blueprint do
+  name { "Area #{sn}" }
+  locale { "es" }
+end
+
+AcademicDegree.blueprint do
+  name { "Degree #{sn}" }
+  locale { "es" }
 end
 
 Sector.blueprint do
@@ -79,4 +90,19 @@ end
 
 Language.blueprint do
   name { "Language #{sn}" }
+end
+
+ExtraActivity.blueprint do
+  name { "Extra Activity #{sn}" }
+end
+
+TestResult.blueprint do
+  extraversion { Faker::Number.between(-3, 3) }
+  feeling { Faker::Number.between(-3, 3) }
+  introversion { Faker::Number.between(-3, 3) }
+  judging { Faker::Number.between(-3, 3) }
+  intuition { Faker::Number.between(-3, 3) }
+  perceiving { Faker::Number.between(-3, 3) }
+  sensing { Faker::Number.between(-3, 3) }
+  thinking { Faker::Number.between(-3, 3) }
 end

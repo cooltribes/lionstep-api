@@ -8,7 +8,7 @@ class TestResult < ActiveRecord::Base
   ### Instance Methods
 
   def get_results
-    TestProcessador.type_information[result]
+    TestProcessador.type_information[result] if complete
   end
 
   def adjetives_pluralized(locale="es")
@@ -18,7 +18,6 @@ class TestResult < ActiveRecord::Base
       "#{first_adjetive.pluralize(locale)} #{conector} #{last_adjetive.pluralize(locale)}"
     end
   end
-
 
   private
 

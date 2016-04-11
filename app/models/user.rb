@@ -60,4 +60,10 @@ class User < ActiveRecord::Base
   def create_test
     create_test_result
   end
+
+  ### Class methods
+  def self.to_csv
+    exporter = UsersCsvExporter.new
+    exporter.convert!
+  end
 end
