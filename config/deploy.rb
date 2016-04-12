@@ -6,7 +6,7 @@ set :repo_url, "git@github.com:cooltribes/lionstep-api.git"
 set :ssh_options, {user: "deploy", forward_agent: true}
 set :scm, :git
 set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{public/uploads tmp/pids tmp/sockets log}
+set :linked_dirs, %w{public/uploads public/csv tmp/pids tmp/sockets log}
 set :keep_releases, 5
 
 #Puma config
