@@ -44,7 +44,8 @@ class V1::Users::ProfessionalExperiencesController < V1::BaseController
 
   def experience_params
     params.permit(:position, :organization, :start_date, :end_date,
-      :country_code, :city, :current, :sector_id, skills: [])
+      :country_code, :city, :current, :sector_id, :responsibility_level_id,
+      :is_startup, :organization_size, skills: [])
   end
 
 end

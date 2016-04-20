@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420151937) do
+ActiveRecord::Schema.define(version: 20160420155643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,17 +190,21 @@ ActiveRecord::Schema.define(version: 20160420151937) do
     t.date     "end_date"
     t.string   "country_code"
     t.string   "city"
-    t.boolean  "current",      default: false
+    t.boolean  "current",                 default: false
     t.integer  "user_id"
     t.integer  "sector_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.datetime "deleted_at"
+    t.integer  "responsibility_level_id"
+    t.string   "organization_size"
+    t.boolean  "is_startup",              default: true
   end
 
   add_index "professional_experiences", ["city"], name: "index_professional_experiences_on_city", using: :btree
   add_index "professional_experiences", ["country_code"], name: "index_professional_experiences_on_country_code", using: :btree
   add_index "professional_experiences", ["deleted_at"], name: "index_professional_experiences_on_deleted_at", using: :btree
+  add_index "professional_experiences", ["responsibility_level_id"], name: "index_professional_experiences_on_responsibility_level_id", using: :btree
   add_index "professional_experiences", ["sector_id"], name: "index_professional_experiences_on_sector_id", using: :btree
   add_index "professional_experiences", ["user_id"], name: "index_professional_experiences_on_user_id", using: :btree
 

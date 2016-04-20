@@ -4,14 +4,16 @@ describe V1::Users::ProfessionalExperiencesController do
   let!(:current_user){ User.make!(:confirmed) }
   let(:experience){ ProfessionalExperience.make!(user: current_user) }
   let(:sector){ Sector.make! }
+  let(:responsibility){ ResponsibilityLevel.make! }
 
   let(:valid_params) do
     { position: "Developer", organization: "Google", start_date: "15-02-2010", end_date: "17-06-2012",
-      country_code: "US", city: "San Francisco", current: false, sector_id: sector.id, skills: ["Rails","PHP"] }
+      country_code: "US", city: "San Francisco", current: false, sector_id: sector.id, skills: ["Rails","PHP"],
+      responsibility_level_id: responsibility.id, organization_size: "10-50", is_startup: true }
   end
 
   let(:invalid_params) do
-    { position: "", organization: "Google", start_date: "15-02-2010", end_date: "17-06-2012",
+    { position: "Developer", organization: "", start_date: "15-02-2010", end_date: "17-06-2012",
       country_code: "US", city: "San Francisco", current: false, sector_id: sector.id }
   end
 
@@ -21,7 +23,10 @@ describe V1::Users::ProfessionalExperiencesController do
         post user_professional_experiences_path(current_user), valid_params, request_headers_for(current_user)
         expect(response.status).to eq(201)
         expect(json_attribute("position")).to eq("Developer")
+        expect(json_attribute("is_startup")).to eq(true)
+        expect(json_attribute("organization_size")).to eq("10-50")
         expect(ProfessionalExperience.last.skills.count).to eq(2)
+        expect(ProfessionalExperience.last.responsibility_level.name).to eq(responsibility.name)
       end
     end
 
@@ -29,7 +34,7 @@ describe V1::Users::ProfessionalExperiencesController do
       it "Should return a json with errors" do
         post user_professional_experiences_path(current_user), invalid_params, request_headers_for(current_user)
         expect(response.status).to eq(422)
-        expect(json["position"]).to eq([I18n.t("errors.messages.blank")])
+        expect(json["organization"]).to eq([I18n.t("errors.messages.blank")])
       end
     end
   end

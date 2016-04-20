@@ -6,12 +6,14 @@ RSpec.describe Experiences::CreateExperience, type: :service do
     {
       position: "Programmer",
       organization: "Cooltribes",
+      organization_size: "10-50",
       start_date: "25-02-2014",
       end_date: "",
       current: true,
       country_code: Country.make!.cc_iso,
       city: "San Cristobal",
-      sector_id: Sector.make!.id
+      sector_id: Sector.make!.id,
+      responsibility_level_id: ResponsibilityLevel.make!.id
     }
   end
 

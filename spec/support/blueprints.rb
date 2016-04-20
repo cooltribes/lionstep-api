@@ -49,8 +49,11 @@ end
 ProfessionalExperience.blueprint do
   position { Faker::Company.profession }
   organization { Faker::Company.name }
+  organization_size { "10-50" }
   start_date { Date.today - 10.years }
   end_date { Date.today - 5.years }
+  is_startup { true }
+  responsibility_level { ResponsibilityLevel.make! }
   sector { Sector.make! }
   country { Country.make! }
   city { object.country.cities.first.name }
@@ -105,4 +108,9 @@ TestResult.blueprint do
   perceiving { Faker::Number.between(-3, 3) }
   sensing { Faker::Number.between(-3, 3) }
   thinking { Faker::Number.between(-3, 3) }
+end
+
+ResponsibilityLevel.blueprint do
+  name { "Responsibility #{sn}" }
+  locale { "es" }
 end
