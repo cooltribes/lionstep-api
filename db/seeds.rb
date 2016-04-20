@@ -46,6 +46,14 @@ SmarterCSV.process(areas_file, { col_sep: ";"}) do |array|
 end
 areas_file.close
 
+#Initial Responsibilities
+puts "Loading initial Responsibilities..."
+respon_file = File.open("db/data/initial_responsibilities.csv", "r:utf-8")
+SmarterCSV.process(respon_file) do |array|
+  ResponsibilityLevel.find_or_create_by(array.first)
+end
+respon_file.close
+
 #Initial Universities
 puts "Loading initial Universities... "
 universities_file = File.open("db/data/initial_universities.csv", "r:utf-8")

@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     get 'skills', to: 'skills#index'
     get 'academic_areas', to: 'academic_areas#index'
     get 'academic_degrees', to: 'academic_degrees#index'
+    get 'responsibilities', to: 'responsibilities#index'
 
     namespace :admin do
       resources :users
