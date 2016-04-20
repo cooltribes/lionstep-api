@@ -114,3 +114,7 @@ ResponsibilityLevel.blueprint do
   name { "Responsibility #{sn}" }
   locale { "es" }
 end
+
+Company.blueprint do
+  name { Faker::Company.name }
+end
