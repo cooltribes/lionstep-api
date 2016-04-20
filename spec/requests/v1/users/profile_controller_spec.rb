@@ -5,7 +5,7 @@ describe V1::Users::ProfilesController do
 
   let(:valid_params) do
     { first_name: "Armando", last_name: "Mendoza", born_date: "21-08-1980",
-      country_code: "VE", city: "San Cristobal", driver_license: false }
+      country_code: "VE", city: "San Cristobal", driver_license: false, previously_worked: true }
   end
 
   let(:invalid_params) do
@@ -23,6 +23,7 @@ describe V1::Users::ProfilesController do
         expect(response.status).to eq(200)
         expect(json["first_name"]).to eq("Armando")
         expect(json["driver_license"]).to eq(false)
+        expect(json["previously_worked"]).to eq(true)
       end
     end
 
