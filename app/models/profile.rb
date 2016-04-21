@@ -7,6 +7,7 @@ class Profile < ActiveRecord::Base
 
   ### Relations
   belongs_to :user
+  belongs_to :desired_sector, class_name: "Sector"
 
   ### Validations
   validates_presence_of :first_name, :last_name, :born_date, :country_code, :city, on: :update

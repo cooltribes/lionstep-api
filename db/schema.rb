@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420205038) do
+ActiveRecord::Schema.define(version: 20160421160333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -155,6 +155,57 @@ ActiveRecord::Schema.define(version: 20160420205038) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "job_languages", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "language_id"
+    t.integer  "level"
+    t.boolean  "required",    default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "job_languages", ["job_id"], name: "index_job_languages_on_job_id", using: :btree
+  add_index "job_languages", ["language_id"], name: "index_job_languages_on_language_id", using: :btree
+
+  create_table "job_requirements", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "academic_area_id"
+    t.integer  "academic_degree_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "job_requirements", ["academic_area_id"], name: "index_job_requirements_on_academic_area_id", using: :btree
+  add_index "job_requirements", ["academic_degree_id"], name: "index_job_requirements_on_academic_degree_id", using: :btree
+  add_index "job_requirements", ["job_id"], name: "index_job_requirements_on_job_id", using: :btree
+
+  create_table "job_skills", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "skill_id"
+    t.integer  "level"
+    t.boolean  "required",   default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "job_skills", ["job_id"], name: "index_job_skills_on_job_id", using: :btree
+  add_index "job_skills", ["skill_id"], name: "index_job_skills_on_skill_id", using: :btree
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "company_id"
+    t.string   "minimum_years"
+    t.string   "desired_years"
+    t.string   "desired_personality"
+    t.string   "country_code"
+    t.string   "city"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "jobs", ["city"], name: "index_jobs_on_city", using: :btree
+  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
+  add_index "jobs", ["country_code"], name: "index_jobs_on_country_code", using: :btree
+
   create_table "language_levels", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "language_id"
@@ -241,6 +292,7 @@ ActiveRecord::Schema.define(version: 20160420205038) do
     t.boolean  "driver_license",    default: true
     t.boolean  "currently_work",    default: false
     t.boolean  "previously_worked", default: false
+    t.integer  "desired_sector_id"
   end
 
   add_index "profiles", ["city"], name: "index_profiles_on_city", using: :btree
@@ -366,6 +418,14 @@ ActiveRecord::Schema.define(version: 20160420205038) do
   add_foreign_key "academic_experiences", "users"
   add_foreign_key "academic_skills", "academic_experiences"
   add_foreign_key "academic_skills", "skills"
+  add_foreign_key "job_languages", "jobs"
+  add_foreign_key "job_languages", "languages"
+  add_foreign_key "job_requirements", "academic_areas"
+  add_foreign_key "job_requirements", "academic_degrees"
+  add_foreign_key "job_requirements", "jobs"
+  add_foreign_key "job_skills", "jobs"
+  add_foreign_key "job_skills", "skills"
+  add_foreign_key "jobs", "companies"
   add_foreign_key "language_levels", "languages"
   add_foreign_key "language_levels", "users"
   add_foreign_key "oauth_providers", "users"
